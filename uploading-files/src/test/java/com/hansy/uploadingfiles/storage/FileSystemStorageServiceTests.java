@@ -37,7 +37,7 @@ public class FileSystemStorageServiceTests {
     @Test
     public void saveNotPermitted() {
         assertThrows(StorageException.class, () -> {
-            service.store(new MockMultipartFile("foo", "../foo.txt",
+            service.store(new MockMultipartFile("foo", "..//foo.txt",
                     MediaType.TEXT_PLAIN_VALUE, "Hello, World".getBytes()));
         });
     }
